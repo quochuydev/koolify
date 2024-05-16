@@ -47,7 +47,7 @@ export default function Page() {
           </div>
           <div className="grid grid-cols-2 p-10">
             <div className="flex items-center">
-              <img src="/nextjs.png" alt="stripe" className="h-[60px]" />
+              <img src="/nextjs.png" alt="nextjs" className="h-[60px]" />
             </div>
 
             <div className="flex gap-2 items-center">
@@ -55,6 +55,21 @@ export default function Page() {
               <div>
                 <p className="text-3xl font-semibold">stripe</p>
                 <p className="italic">checkout</p>
+              </div>
+            </div>
+
+            <div className="flex gap-2 items-center">
+              <img src="/tailwind.png" alt="tailwind" className="h-[60px]" />
+              <div>
+                <p className="text-3xl font-semibold">tailwind</p>
+                <p className="italic">components</p>
+              </div>
+            </div>
+
+            <div className="flex gap-2 items-center">
+              <img src="/next-auth.png" alt="tailwind" className="h-[60px]" />
+              <div>
+                <p className="text-3xl font-semibold">next-auth</p>
               </div>
             </div>
           </div>
@@ -169,7 +184,7 @@ export default function Page() {
 
             <ul className="my-4">
               <li>- Create checkout sessions</li>
-              <li>- Handle webhooks to update user's account</li>
+              <li>{`- Handle webhooks to update user's account`}</li>
               <li>- Tips to setup your account & reduce chargebacks</li>
               <li>- Time saved: 5 hours</li>
             </ul>
@@ -193,8 +208,7 @@ export default function Page() {
         <section className="flex flex-col items-center py-14">
           <h2 className="text-5xl">Boost your app, launch, earn</h2>
           <p className="my-6">
-            Don't waste time on Stripe subscriptions or designing a pricing
-            section...
+            {`Don't waste time on Stripe subscriptions or designing a pricing section...`}
           </p>
           <Checkout className="rounded-md bg-yellow-300 px-20 py-3 font-semibold" />
         </section>
