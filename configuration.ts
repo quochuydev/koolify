@@ -11,17 +11,13 @@ type Configuration = {
 };
 
 const schema = z.object({
-  mailgun: z
-    .object({
-      token: z.string(),
-    })
-    .optional(),
-  stripe: z
-    .object({
-      publicKey: z.string(),
-      secretKey: z.string(),
-    })
-    .optional(),
+  mailgun: z.object({
+    token: z.string().optional(),
+  }),
+  stripe: z.object({
+    publicKey: z.string().optional(),
+    secretKey: z.string().optional(),
+  }),
 });
 
 const configuration: Configuration = {
@@ -35,7 +31,6 @@ const configuration: Configuration = {
 };
 
 try {
-  console.log(`debug:configuration`, configuration);
   schema.parse(configuration);
 } catch (error) {
   console.error("Bad configuration.", error);
