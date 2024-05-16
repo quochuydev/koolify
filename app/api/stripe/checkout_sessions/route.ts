@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
+import configuration from "@/configuration";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
+const stripe = new Stripe(configuration.stripe.secretKey);
 
 export async function POST(req: NextRequest) {
   try {

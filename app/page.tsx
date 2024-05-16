@@ -75,7 +75,7 @@ export default function Page() {
           </div>
         </section>
 
-        <section className="mx-auto grid max-w-2xl grid-cols-5">
+        <section className="mx-auto grid max-w-2xl grid-cols-5 mb-14 ">
           <p>Featured on</p>
           <a href="#" className="hover:text-gray-300">
             {"Hacker news"}
@@ -91,7 +91,7 @@ export default function Page() {
           </a>
         </section>
 
-        <section className="flex flex-col items-center py-14" id="pricing">
+        <section className="flex flex-col items-center h-screen" id="pricing">
           <p className="text-secondary font-semibold text-xl">pricing</p>
 
           <h2 className="flex flex-col items-center text-5xl">
@@ -105,14 +105,14 @@ export default function Page() {
           </p>
 
           <div className="flex gap-10">
-            <div className="rounded-xl border border-gray-500 px-8 py-14">
+            <div className="rounded-xl border border-gray-500 p-14">
               <p className="text-xl font-bold">Starter</p>
               <p className="py-5 font-bold">
-                <span className="text-xl line-through">$169</span>
-                <span className="text-4xl">$269</span>
-                <span className="text-xs">USD</span>
+                <span className="text-2xl line-through">$49</span>
+                <span className="text-6xl">$69</span>
+                <span className="text-lg">USD</span>
               </p>
-              <ul className="flex flex-col gap-2">
+              <ul className="flex flex-col gap-4">
                 <li>- NextJS boilerplate Components & animations</li>
                 <li>- SEO & Blog</li>
                 <li>- Mailgun emails</li>
@@ -124,40 +124,17 @@ export default function Page() {
 
               <Checkout className="mt-5 w-full rounded-md bg-yellow-300 py-3 font-semibold" />
 
-              <p className="text-center text-sm">
-                Pay once. Build unlimited projects!
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-gray-500 px-8 py-14">
-              <p className="text-xl font-bold">Plus</p>
-
-              <p className="py-5 font-bold">
-                <span className="text-xl line-through">$169</span>
-                <span className="text-4xl">$269</span>
-                <span className="text-xs">USD</span>
-              </p>
-
-              <ul className="flex flex-col gap-2">
-                <li>- NextJS boilerplate Components & animations</li>
-                <li>- SEO & Blog</li>
-                <li>- Mailgun emails</li>
-                <li>- Stripe payments</li>
-                <li>- MongoDB / Supabase</li>
-                <li>- Google Oauth & Magic Links</li>
-                <li>- Components & animations</li>
-              </ul>
-
-              <Checkout className="mt-5 w-full rounded-md bg-yellow-300 py-3 font-semibold" />
-
-              <p className="text-center text-sm">
+              <p className="text-center text-sm mt-2">
                 Pay once. Build unlimited projects!
               </p>
             </div>
           </div>
         </section>
 
-        <section id="features" className="flex flex-col m-auto py-14 max-w-3xl">
+        <section
+          id="features"
+          className="flex flex-col m-auto py-14 max-w-3xl h-screen"
+        >
           <div className="text-center">
             <p className="text-secondary font-semibold text-xl">features</p>
 
