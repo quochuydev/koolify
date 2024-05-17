@@ -32,10 +32,7 @@ export default function Pricing() {
   ];
 
   return (
-    <section
-      className="flex flex-col items-center py-8 bg-component-pricing bg-cover"
-      id="pricing"
-    >
+    <section className="flex flex-col items-center py-8 bg-cover" id="pricing">
       <p className="text-secondary font-semibold text-xl">pricing</p>
 
       <h2 className="flex flex-col items-center text-5xl font-bold">
@@ -52,7 +49,7 @@ export default function Pricing() {
         {prices.map((e) => (
           <div
             key={e.name}
-            className="flex flex-col rounded-xl border-2 border-secondary p-8 bg-primaryDark text-white"
+            className="flex flex-col rounded-xl border-2 border-secondary p-8"
           >
             <p className="text-2xl font-bold">{e.name}</p>
             <p className="my-5 font-bold">

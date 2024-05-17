@@ -5,7 +5,7 @@ import Profile from "@/components/Profile";
 
 export default function Headers() {
   return (
-    <header className="p-6">
+    <header className="p-8">
       <div className="container mx-auto flex max-w-7xl items-center">
         <h1 className="mr-24 text-2xl font-bold">koolify</h1>
 

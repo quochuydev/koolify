@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Headers() {
   return (
-    <footer className="border-primaryLight border-t-[2px] px-6 py-14">
+    <footer className="border-primary border-t-[2px] px-6 py-14">
       <div className="container mx-auto grid max-w-7xl grid-cols-3 justify-items-center">
         <div>
           <p>&copy; 2024 Koolify. All rights reserved.</p>
