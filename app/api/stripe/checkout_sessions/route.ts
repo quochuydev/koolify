@@ -1,10 +1,7 @@
-import { NextRequest, NextResponse } from "next/server";
-import Stripe from "stripe";
-import configuration from "@/configuration";
+import { NextResponse } from "next/server";
+import { stripe } from "@/lib/stripe";
 
-const stripe = new Stripe(configuration.stripe.secretKey);
-
-export async function POST(req: NextRequest) {
+export async function POST() {
   try {
     const session = await stripe.checkout.sessions.create({
       line_items: [

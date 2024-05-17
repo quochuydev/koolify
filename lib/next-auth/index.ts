@@ -62,6 +62,7 @@ export const authOptions: NextAuthOptions = {
             "urn:zitadel:iam:user:resourceowner",
             "urn:zitadel:iam:org:projects:roles",
             "urn:zitadel:iam:org:project:id:zitadel:aud",
+            `urn:zitadel:iam:org:id:${process.env.ZITADEL_ORG_ID}`,
           ].join(" "),
         },
       },

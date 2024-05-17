@@ -3,9 +3,8 @@ import Features from "@/components/Features";
 import Headers from "@/components/Headers";
 import Pricing from "@/components/Pricing";
 import Checkout from "@/components/Stripe/Checkout";
-import React from "react";
 
-export default function Page() {
+export default async function Page() {
   return (
     <div>
       <Headers />
@@ -55,14 +54,15 @@ export default function Page() {
               <img src="/next-auth.png" alt="tailwind" className="h-[60px]" />
               <div>
                 <p className="text-3xl font-semibold">next-auth</p>
+                <p className="italic">authenticate with zitadel</p>
               </div>
             </div>
 
             <div className="flex gap-2 items-center">
-              <img src="/paypal.png" alt="paypal" className="h-[60px]" />
+              <img src="/github.png" alt="github" className="h-[60px]" />
               <div>
-                <p className="text-3xl font-semibold">paypal</p>
-                <p className="italic">checkout</p>
+                <p className="text-3xl font-semibold">github</p>
+                <p className="italic">invite to repository</p>
               </div>
             </div>
 
