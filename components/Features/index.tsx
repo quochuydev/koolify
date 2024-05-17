@@ -7,9 +7,52 @@ import React from "react";
 export default function Features() {
   const [feature, setFeature] = React.useState("stripe");
 
+  const features = [
+    {
+      key: "stripe",
+      name: "Stripe",
+      image: "/stripe.png",
+      details: [
+        "Create checkout sessions",
+        "Handle webhooks to update user's account",
+        "Tips to setup your account & reduce chargebacks",
+      ],
+      link: "https://stripe.com",
+    },
+    {
+      key: "next-auth",
+      name: "next-auth",
+      image: "/next-auth.png",
+      details: [
+        "Security authentication",
+        "Multiple authenticate providers (Zitadel, Google)",
+        "Protect private router",
+      ],
+      link: "https://next-auth.js.org/",
+    },
+    {
+      key: "more",
+      name: "More",
+      image: "/next-auth.png",
+      details: [
+        "Tips to write copy that sells",
+        "Discord community to stay accountable",
+        "Crisp customer support (auto show/hide, variables...)",
+        "Collect emails for a waitlist if your product isn't ready",
+        "Prompts to generate terms & privacy policy with ChatGPT",
+        "Copy paste code templates",
+        "Dead simple tutorials",
+      ],
+      link: "https://next-auth.js.org/",
+    },
+  ];
+
   return (
-    <section id="features" className="flex flex-col m-auto py-14 max-w-3xl">
-      <div className="text-center">
+    <section
+      id="features"
+      className="flex flex-col m-auto py-14 bg-black text-white"
+    >
+      <div className="text-center m-auto container max-w-3xl">
         <p className="text-secondary font-semibold text-xl">features</p>
 
         <h2 className="flex flex-col items-center text-5xl">
@@ -22,87 +65,52 @@ export default function Features() {
           provides you with the boilerplate code you need to launch, FAST
         </p>
 
-        <div className="flex gap-40 ">
-          <button
-            className="flex flex-col items-center"
-            onClick={() => setFeature("stripe")}
-          >
-            <img src="/stripe.png" alt="stripe" className="h-[50px]" />
-            <p
-              className={clsx({
-                "text-secondary": feature === "stripe",
-              })}
+        <div className="flex justify-between">
+          {features.map((e) => (
+            <button
+              key={e.key}
+              className="flex flex-col items-center gap-2"
+              onClick={() => setFeature(e.key)}
             >
-              Payments
-            </p>
-          </button>
-          <button
-            className="flex flex-col items-center"
-            onClick={() => setFeature("mailgun")}
-          >
-            <img src="/mailgun.png" alt="mailgun" className="h-[50px]" />
-            <p
-              className={clsx({
-                "text-secondary": feature === "mailgun",
-              })}
-            >
-              Mail
-            </p>
-          </button>
+              <img src={e.image} alt={e.name} className="h-[50px]" />
+              <p
+                className={clsx({
+                  "text-secondary": feature === e.key,
+                })}
+              >
+                {e.name}
+              </p>
+            </button>
+          ))}
         </div>
       </div>
 
-      {feature === "stripe" && (
-        <div className="py-16">
-          <h3 className="font-bold text-lg">Payments</h3>
+      {features
+        .filter((e) => e.key === feature)
+        .map((feat) => (
+          <div
+            key={feat.key}
+            className="pt-14 mx-auto container max-w-3xl min-h-[250px]"
+          >
+            <h3 className="font-bold text-lg">{feat.name}</h3>
 
-          <ul className="my-4">
-            <li>- Create checkout sessions</li>
-            <li>{`- Handle webhooks to update user's account`}</li>
-            <li>- Tips to setup your account & reduce chargebacks</li>
-            <li>- Time saved: 5 hours</li>
-          </ul>
+            <ul className="my-4">
+              {feat.details.map((e) => (
+                <li key={e}>{`- ${e}`}</li>
+              ))}
+            </ul>
 
-          <div className="flex items-center gap-2">
-            <img src="/stripe.png" alt="stripe" className="h-[30px]" />
-            <p>
-              {"with "}
-              <a
-                href="https://stripe.com"
-                className="underline"
-                target="_blank"
-              >
-                Stripe
-              </a>
-            </p>
+            <div className="flex items-center gap-2">
+              <img src={feat.image} alt={feat.name} className="h-[30px]" />
+              <p>
+                {"with "}
+                <a href={feat.link} className="underline" target="_blank">
+                  {feat.name}
+                </a>
+              </p>
+            </div>
           </div>
-        </div>
-      )}
-
-      {feature === "mailgun" && (
-        <div className="py-16">
-          <h3 className="font-bold text-lg">Mail</h3>
-
-          <ul className="my-4">
-            <li>- Create checkout sessions</li>
-            <li>{`- Handle webhooks to update user's account`}</li>
-          </ul>
-
-          <div className="flex items-center gap-2">
-            <img src="/mailgun.png" alt="mailgun" className="h-[30px]" />
-            <p>
-              {"with "}
-              <a
-                href="https://www.mailgun.com"
-                className="underline"
-                target="_blank"
-              >
-                Mailgun
-              </a>
-            </p>
-          </div>
-        </div>
-      )}
+        ))}
     </section>
   );
 }

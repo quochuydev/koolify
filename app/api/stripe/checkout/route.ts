@@ -1,12 +1,15 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
 
-export async function POST() {
+export async function POST(request: NextRequest) {
   try {
+    const body = await request.json();
+    if (!body.priceId) throw new Error("invalid price ID");
+
     const session = await stripe.checkout.sessions.create({
       line_items: [
         {
-          price: "price_1PH0ZcLpywe3DIzEY5rlssaI",
+          price: body.priceId,
           quantity: 1,
         },
       ],
@@ -15,10 +18,16 @@ export async function POST() {
       cancel_url: new URL("?canceled=true", process.env.APP_URL).toString(),
     });
 
-    console.log(`debug:session`, session.url);
     if (!session.url) throw session;
 
-    return NextResponse.redirect(session.url, { status: 303 });
+    return NextResponse.json(
+      {
+        url: session.url,
+      },
+      {
+        status: 200,
+      }
+    );
   } catch (err: any) {
     console.log(`debug:err`, err);
 

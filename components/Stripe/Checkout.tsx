@@ -22,10 +22,23 @@ export default function Page({ className }: { className: string }) {
   }, []);
 
   return (
-    <form action="/api/stripe/checkout_sessions" method="POST">
-      <button type="submit" className={className}>
-        Get koolify
-      </button>
-    </form>
+    <button
+      type="submit"
+      className={className}
+      onClick={async () => {
+        const result: any = await fetch("/api/stripe/checkout", {
+          method: "post",
+          body: JSON.stringify({
+            priceId: "price_1PH0ZcLpywe3DIzEY5rlssaI",
+          }),
+        })
+          .then((e) => e.json())
+          .catch(console.log);
+
+        if (result?.url) window.location.replace(result?.url);
+      }}
+    >
+      Get koolify
+    </button>
   );
 }

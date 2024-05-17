@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Features from "@/components/Features";
+import Footer from "@/components/Footer";
 import Headers from "@/components/Headers";
 import Pricing from "@/components/Pricing";
 import Checkout from "@/components/Stripe/Checkout";
@@ -9,8 +10,8 @@ export default async function Page() {
     <div>
       <Headers />
 
-      <main className="container mx-auto max-w-7xl">
-        <section className="grid grid-cols-2 gap-4 py-10">
+      <main>
+        <section className="grid grid-cols-2 gap-4 py-10 mx-auto container max-w-7xl">
           <div className="flex flex-col items-start justify-center">
             <h1 className="flex flex-col text-6xl">
               <span>Ship your startup</span>
@@ -57,46 +58,48 @@ export default async function Page() {
                 <p className="italic">authenticate with zitadel</p>
               </div>
             </div>
-
-            <div className="flex gap-2 items-center">
-              <img src="/github.png" alt="github" className="h-[60px]" />
-              <div>
-                <p className="text-3xl font-semibold">github</p>
-                <p className="italic">invite to repository</p>
-              </div>
-            </div>
-
-            <div className="flex gap-2 items-center">
-              <img src="/mailgun.png" alt="stripe" className="h-[60px]" />
-              <div>
-                <p className="text-3xl font-semibold">mailgun</p>
-                <p className="italic">send campaign</p>
-              </div>
-            </div>
           </div>
         </section>
 
-        <section className="mx-auto grid max-w-4xl grid-cols-4 mb-14 items-center">
-          <a href="#" className="hover:text-gray-300 flex items-center gap-2">
-            <img src="/hackernews.png" alt="hacker news" className="h-[40px]" />
-            {"Hacker news"}
-          </a>
-          <a href="#" className="hover:text-gray-300 flex items-center gap-2">
-            <img
-              src="/product-hunt.png"
-              alt="Product hunt"
-              className="h-[40px]"
-            />
-            {"Product hunt"}
-          </a>
-          <a href="#" className="hover:text-gray-300 flex items-center gap-2">
-            <img src="/twitter.png" alt="twitter" className="h-[40px]" />
-            {"Twitter"}
-          </a>
-          <a href="#" className="hover:text-gray-300 flex items-center gap-2">
-            <img src="/reddit.png" alt="reddit" className="h-[40px]" />
-            {"Reddit"}
-          </a>
+        <section className="bg-black text-white py-4">
+          <div className="mx-auto grid max-w-4xl grid-cols-4 items-center bg-black text-white">
+            <a
+              href="#"
+              className="hover:text-gray-300 flex items-center gap-2 justify-center"
+            >
+              <img
+                src="/hackernews.png"
+                alt="hacker news"
+                className="h-[40px]"
+              />
+              {"Hacker news"}
+            </a>
+            <a
+              href="#"
+              className="hover:text-gray-300 flex items-center gap-2 justify-center"
+            >
+              <img
+                src="/product-hunt.png"
+                alt="Product hunt"
+                className="h-[40px]"
+              />
+              {"Product hunt"}
+            </a>
+            <a
+              href="#"
+              className="hover:text-gray-300 flex items-center gap-2 justify-center"
+            >
+              <img src="/twitter.png" alt="twitter" className="h-[40px]" />
+              {"Twitter"}
+            </a>
+            <a
+              href="#"
+              className="hover:text-gray-300 flex items-center gap-2 justify-center"
+            >
+              <img src="/reddit.png" alt="reddit" className="h-[40px]" />
+              {"Reddit"}
+            </a>
+          </div>
         </section>
 
         <Pricing />
@@ -111,40 +114,7 @@ export default async function Page() {
         </section>
       </main>
 
-      <footer className="border-primaryLight border-t-[1px] px-6 py-14">
-        <div className="container mx-auto grid max-w-7xl grid-cols-3">
-          <div className="">
-            <p>&copy; 2024 Koolify. All rights reserved.</p>
-            <a
-              className="text-primaryLight"
-              href="mailto:quochuy.dev@gmail.com"
-            >
-              {`Email: quochuy.dev@gmail.com`}
-            </a>
-          </div>
-          <div className="flex flex-col gap-2">
-            <p className="text-primaryDark">LINKS</p>
-            <a href="#pricing" className="hover:underline text-sm">
-              {"Pricing"}
-            </a>
-            <a href="#" className="hover:underline text-sm">
-              {"Documentation"}
-            </a>
-          </div>
-          <div className="flex flex-col gap-2">
-            <p className="text-primaryDark">LEGAL</p>
-            <a href="/tos" className="hover:underline text-sm">
-              {"Terms of services"}
-            </a>
-            <a href="/privacy-policy" className="hover:underline text-sm">
-              {"Privacy policy"}
-            </a>
-            <a href="/license" className="hover:underline text-sm">
-              {"License"}
-            </a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

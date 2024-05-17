@@ -22,6 +22,9 @@ export default {
         orange: "#F5A623",
         violet: "#7928CA",
       },
+      backgroundImage: {
+        "component-pricing": "url('/component-pricing.jpg')",
+      },
     },
   },
   plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
