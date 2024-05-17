@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+import Features from "@/components/Features";
+import Pricing from "@/components/Pricing";
 import Checkout from "@/components/Stripe/Checkout";
 import React from "react";
 
@@ -33,7 +35,7 @@ export default function Page() {
               <span>Ship your startup</span>
               <span>in days,not weeks</span>
             </h1>
-            <p className="py-14">
+            <p className="my-14">
               The NextJS boilerplate with all you need to build your SaaS, AI
               tool, or any other web app and make your first $ online fast.
             </p>
@@ -45,6 +47,7 @@ export default function Page() {
               customers (10 left)
             </p>
           </div>
+
           <div className="grid grid-cols-2 p-10">
             <div className="flex items-center">
               <img src="/nextjs.png" alt="nextjs" className="h-[60px]" />
@@ -91,102 +94,17 @@ export default function Page() {
           </a>
         </section>
 
-        <section className="flex flex-col items-center h-screen" id="pricing">
-          <p className="text-secondary font-semibold text-xl">pricing</p>
+        <Pricing />
 
-          <h2 className="flex flex-col items-center text-5xl">
-            <span>Save hours of repetitive code,</span>
-            <span>ship fast, get profitable</span>
-          </h2>
-
-          <p className="mt-6 mb-14 text-sm">
-            <span className="text-cyan">$100 off</span> for the first 3140
-            customers (10 left)
-          </p>
-
-          <div className="flex gap-10">
-            <div className="rounded-xl border border-gray-500 p-14">
-              <p className="text-xl font-bold">Starter</p>
-              <p className="py-5 font-bold">
-                <span className="text-2xl line-through">$49</span>
-                <span className="text-6xl">$69</span>
-                <span className="text-lg">USD</span>
-              </p>
-              <ul className="flex flex-col gap-4">
-                <li>- NextJS boilerplate Components & animations</li>
-                <li>- SEO & Blog</li>
-                <li>- Mailgun emails</li>
-                <li>- Stripe payments</li>
-                <li>- MongoDB / Supabase</li>
-                <li>- Google Oauth & Magic Links</li>
-                <li>- Components & animations</li>
-              </ul>
-
-              <Checkout className="mt-5 w-full rounded-md bg-yellow-300 py-3 font-semibold" />
-
-              <p className="text-center text-sm mt-2">
-                Pay once. Build unlimited projects!
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section
-          id="features"
-          className="flex flex-col m-auto py-14 max-w-3xl h-screen"
-        >
-          <div className="text-center">
-            <p className="text-secondary font-semibold text-xl">features</p>
-
-            <h2 className="flex flex-col items-center text-5xl">
-              Supercharge your app instantly, launch faster, make $
-            </h2>
-
-            <p className="mt-6 mb-14 text-lg">
-              Login users, process payments and send emails at lightspeed. Spend
-              your time building your startup, not integrating APIs. ShipFast
-              provides you with the boilerplate code you need to launch, FAST
-            </p>
-
-            <div className="flex gap-40 ">
-              <button className="flex flex-col items-center">
-                <img src="/stripe.png" alt="stripe" className="h-[50px]" />
-                <p>Payments</p>
-              </button>
-            </div>
-          </div>
-
-          <div className="py-16">
-            <h3 className="font-bold text-lg">Payments</h3>
-
-            <ul className="my-4">
-              <li>- Create checkout sessions</li>
-              <li>{`- Handle webhooks to update user's account`}</li>
-              <li>- Tips to setup your account & reduce chargebacks</li>
-              <li>- Time saved: 5 hours</li>
-            </ul>
-
-            <div className="flex items-center gap-2">
-              <img src="/stripe.png" alt="stripe" className="h-[30px]" />
-              <p>
-                with{" "}
-                <a
-                  href="https://stripe.com/"
-                  className="underline"
-                  target="_blank"
-                >
-                  Stripe
-                </a>
-              </p>
-            </div>
-          </div>
-        </section>
+        <Features />
 
         <section className="flex flex-col items-center py-14">
           <h2 className="text-5xl">Boost your app, launch, earn</h2>
+
           <p className="my-6">
             {`Don't waste time on Stripe subscriptions or designing a pricing section...`}
           </p>
+
           <Checkout className="rounded-md bg-yellow-300 px-20 py-3 font-semibold" />
         </section>
       </main>
