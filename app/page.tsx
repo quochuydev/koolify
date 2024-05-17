@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Features from "@/components/Features";
+import Headers from "@/components/Headers";
 import Pricing from "@/components/Pricing";
 import Checkout from "@/components/Stripe/Checkout";
 import React from "react";
@@ -7,26 +8,7 @@ import React from "react";
 export default function Page() {
   return (
     <div>
-      <header className="px-6 py-4 ">
-        <div className="container mx-auto flex max-w-7xl items-center">
-          <h1 className="mr-24 text-2xl font-bold">koolify</h1>
-
-          <nav>
-            <ul className="flex gap-14">
-              <li>
-                <a href="#pricing" className="hover:underline">
-                  {"Pricing"}
-                </a>
-              </li>
-              <li>
-                <a href="#features" className="hover:underline">
-                  {"Features"}
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <Headers />
 
       <main className="container mx-auto max-w-7xl">
         <section className="grid grid-cols-2 gap-4 py-10">
@@ -54,18 +36,18 @@ export default function Page() {
             </div>
 
             <div className="flex gap-2 items-center">
-              <img src="/stripe.png" alt="stripe" className="h-[60px]" />
-              <div>
-                <p className="text-3xl font-semibold">stripe</p>
-                <p className="italic">checkout</p>
-              </div>
-            </div>
-
-            <div className="flex gap-2 items-center">
               <img src="/tailwind.png" alt="tailwind" className="h-[60px]" />
               <div>
                 <p className="text-3xl font-semibold">tailwind</p>
                 <p className="italic">components</p>
+              </div>
+            </div>
+
+            <div className="flex gap-2 items-center">
+              <img src="/stripe.png" alt="stripe" className="h-[60px]" />
+              <div>
+                <p className="text-3xl font-semibold">stripe</p>
+                <p className="italic">checkout</p>
               </div>
             </div>
 
@@ -75,36 +57,56 @@ export default function Page() {
                 <p className="text-3xl font-semibold">next-auth</p>
               </div>
             </div>
+
+            <div className="flex gap-2 items-center">
+              <img src="/paypal.png" alt="paypal" className="h-[60px]" />
+              <div>
+                <p className="text-3xl font-semibold">paypal</p>
+                <p className="italic">checkout</p>
+              </div>
+            </div>
+
+            <div className="flex gap-2 items-center">
+              <img src="/mailgun.png" alt="stripe" className="h-[60px]" />
+              <div>
+                <p className="text-3xl font-semibold">mailgun</p>
+                <p className="italic">send campaign</p>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section className="mx-auto grid max-w-2xl grid-cols-5 mb-14 ">
-          <p>Featured on</p>
-          <a href="#" className="hover:text-gray-300">
+        <section className="mx-auto grid max-w-4xl grid-cols-4 mb-14 items-center">
+          <a href="#" className="hover:text-gray-300 flex items-center gap-2">
+            <img src="/hackernews.png" alt="hacker news" className="h-[40px]" />
             {"Hacker news"}
           </a>
-          <a href="#" className="hover:text-gray-300">
+          <a href="#" className="hover:text-gray-300 flex items-center gap-2">
+            <img
+              src="/product-hunt.png"
+              alt="Product hunt"
+              className="h-[40px]"
+            />
             {"Product hunt"}
           </a>
-          <a href="#" className="hover:text-gray-300">
+          <a href="#" className="hover:text-gray-300 flex items-center gap-2">
+            <img src="/twitter.png" alt="twitter" className="h-[40px]" />
             {"Twitter"}
           </a>
-          <a href="#" className="hover:text-gray-300">
+          <a href="#" className="hover:text-gray-300 flex items-center gap-2">
+            <img src="/reddit.png" alt="reddit" className="h-[40px]" />
             {"Reddit"}
           </a>
         </section>
 
         <Pricing />
-
         <Features />
 
         <section className="flex flex-col items-center py-14">
           <h2 className="text-5xl">Boost your app, launch, earn</h2>
-
           <p className="my-6">
             {`Don't waste time on Stripe subscriptions or designing a pricing section...`}
           </p>
-
           <Checkout className="rounded-md bg-yellow-300 px-20 py-3 font-semibold" />
         </section>
       </main>
